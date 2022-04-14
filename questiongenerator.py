@@ -196,7 +196,7 @@ class QuestionGenerator:
         questions. Sentences are used as context, and entities as answers. Returns a tuple of (model inputs, answers). 
         Model inputs are "answer_token <answer text> context_token <context text>"
         """
-        spacy_nlp = en_core_web_sm.load()
+        spacy_nlp = fr_core_news_sm.load()
         docs = list(spacy_nlp.pipe(sentences, disable=["parser"]))
         inputs_from_text = []
         answers_from_text = []
