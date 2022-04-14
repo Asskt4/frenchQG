@@ -1,4 +1,4 @@
-import en_core_web_sm
+import fr_core_news_sm
 import json
 import numpy as np
 import random
