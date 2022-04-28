@@ -418,7 +418,7 @@ def print_qa(qa_list: List[Mapping[str, str]], show_answers: bool = True) -> Non
             else:
                 print(f"{answer[0]['answer']}")
                 for j in range(1, len(answer)):
-                    print(f"{space + '   '}{j + 1}. {answer[j]['answer']}")
+                    print(f"{answer[j]['answer']}")
 
             print("")
 
