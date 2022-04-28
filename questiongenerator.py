@@ -1,4 +1,4 @@
-import fr_core_news_sm
+import en_core_web_sm
 import json
 import numpy as np
 import random
@@ -196,7 +196,7 @@ class QuestionGenerator:
         questions. Sentences are used as context, and entities as answers. Returns a tuple of (model inputs, answers). 
         Model inputs are "answer_token <answer text> context_token <context text>"
         """
-        spacy_nlp = fr_core_news_sm.load()
+        spacy_nlp = en_core_web_sm.load()
         docs = list(spacy_nlp.pipe(sentences, disable=["parser"]))
         inputs_from_text = []
         answers_from_text = []
@@ -406,7 +406,7 @@ def print_qa(qa_list: List[Mapping[str, str]], show_answers: bool = True) -> Non
 
             if show_answers:
                 print(
-                    f"{space}A: 1. {answer[0]['answer']} "
+                    f" {answer[0]['answer']} "
                     f"{np.where(answer[0]['correct'], '(correct)', '')}"
                 )
                 for j in range(1, len(answer)):
@@ -416,7 +416,7 @@ def print_qa(qa_list: List[Mapping[str, str]], show_answers: bool = True) -> Non
                     )
 
             else:
-                print(f"{space}A: 1. {answer[0]['answer']}")
+                print(f"{answer[0]['answer']}")
                 for j in range(1, len(answer)):
                     print(f"{space + '   '}{j + 1}. {answer[j]['answer']}")
 
